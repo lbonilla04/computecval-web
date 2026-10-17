@@ -19,14 +19,17 @@ a{color:inherit}
 .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
 header{padding:20px 0;border-bottom:1px solid var(--line)}
 header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.logo{font:800 22px "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.01em}
+.logo{font:800 32px "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.01em}
 .logo span{color:var(--blue)}
 nav{display:flex;gap:22px;font-weight:500}
 nav a{text-decoration:none;color:var(--muted)}
 nav a:hover{color:var(--ink)}
-.hero{padding:64px 0 72px;position:relative;overflow:hidden;background:linear-gradient(120deg,rgba(30,91,216,.16),rgba(0,137,127,.16),rgba(107,63,234,.16),rgba(255,176,0,.16));background-size:300% 300%;animation:flow 16s ease infinite}
+.hero{padding:64px 0 72px;position:relative;overflow:hidden;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='360' viewBox='0 0 520 360' fill='none' stroke='%231E5BD8' stroke-opacity='.3' stroke-width='2'%3E%3Cpath d='M0 60h120l30 30h90M0 150h80l40-40h140l30 30h110M520 80h-90l-30 30h-70M0 260h150l30-30h120l40 40h180M200 360v-70l30-30M400 0v70l-30 30M60 360v-60'/%3E%3Crect x='300' y='150' width='70' height='70' rx='8'/%3E%3Cpath d='M315 150v-14M335 150v-14M355 150v-14M315 220v14M335 220v14M355 220v14M300 170h-14M300 190h-14M300 210h-14M370 170h14M370 190h14M370 210h14'/%3E%3Cg fill='%2300897F' fill-opacity='.45' stroke='none'%3E%3Ccircle cx='240' cy='90' r='5'/%3E%3Ccircle cx='80' cy='150' r='5'/%3E%3Ccircle cx='430' cy='80' r='5'/%3E%3Ccircle cx='300' cy='230' r='5'/%3E%3Ccircle cx='150' cy='260' r='5'/%3E%3Ccircle cx='520' cy='260' r='5'/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(120deg,rgba(30,91,216,.16),rgba(0,137,127,.16),rgba(107,63,234,.16),rgba(255,176,0,.16));background-size:520px 360px,300% 300%;animation:flow 16s ease infinite}
 .hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
-.hero h1{font-size:clamp(40px,6.4vw,74px);font-weight:800;letter-spacing:-.025em}
+.hero h1{font-size:clamp(26px,3.6vw,40px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.brand{font:800 clamp(44px,7vw,80px)/.98 "Bricolage Grotesque","Public Sans",system-ui,sans-serif;letter-spacing:-.03em;margin-bottom:12px}
+.brand span{color:var(--blue)}
+.tagline{font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:22px}
 .hero p{max-width:46ch;color:var(--muted);font-size:19px;margin:22px 0 30px}
 .btn{display:inline-block;background:var(--blue);color:var(--blue-ink);padding:14px 26px;border-radius:6px;font-weight:600;text-decoration:none;border:0;font-size:17px;font-family:inherit;cursor:pointer}
 .btn:hover{filter:brightness(1.08)}
@@ -136,6 +139,8 @@ section{padding:48px 0}
 <div class="hero">
 <div class="wrap">
 <div>
+<div class="brand">Computec <span>Val</span></div>
+<div class="tagline">Soporte técnico tecnológico</div>
 <h1>Tu equipo funcionando, sin vueltas.</h1>
 <p>Soporte técnico para computadoras, redes y dispositivos. Revisamos el problema, te explicamos qué pasa y lo resolvemos.</p>
 <a class="btn" href="#contacto">Pedir soporte</a>
