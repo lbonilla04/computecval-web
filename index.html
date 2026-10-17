@@ -6,7 +6,7 @@
 <title>Computec Val | Soporte técnico tecnológico</title>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#E9EFF2;--surface:#F7FAFB;--ink:#12263A;--muted:#4A5D6E;--line:#B9C6CF;--blue:#1E5BD8;--blue-ink:#fff;--amber:#FFB000;
+:root{--bg:#E9EFF2;--surface:#F7FAFB;--ink:#12263A;--muted:#4A5D6E;--line:#B9C6CF;--blue:#1E5BD8;--blue-ink:#fff;--amber:#FFB000;--teal:#00897F;--violet:#6B3FEA;--coral:#D63A40;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1B28;--surface:#16273A;--ink:#E8EEF3;--muted:#9FB0BF;--line:#2B4157;--blue:#5B8DF0;--blue-ink:#0F1B28;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#0F1B28;--surface:#16273A;--ink:#E8EEF3;--muted:#9FB0BF;--line:#2B4157;--blue:#5B8DF0;--blue-ink:#0F1B28;color-scheme:dark}
@@ -24,7 +24,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
 nav{display:flex;gap:22px;font-weight:500}
 nav a{text-decoration:none;color:var(--muted)}
 nav a:hover{color:var(--ink)}
-.hero{padding:64px 0 72px}
+.hero{padding:64px 0 72px;position:relative;overflow:hidden;background:linear-gradient(120deg,rgba(30,91,216,.16),rgba(0,137,127,.16),rgba(107,63,234,.16),rgba(255,176,0,.16));background-size:300% 300%;animation:flow 16s ease infinite}
 .hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
 .hero h1{font-size:clamp(40px,6.4vw,74px);font-weight:800;letter-spacing:-.025em}
 .hero p{max-width:46ch;color:var(--muted);font-size:19px;margin:22px 0 30px}
@@ -52,6 +52,60 @@ section h2{font-size:clamp(30px,4.4vw,44px);font-weight:800;letter-spacing:-.02e
 .mv .cols div{border-left:4px solid var(--blue);padding-left:22px}
 .mv h3{font-size:24px;font-weight:700;margin-bottom:8px}
 .mv p{margin:0;color:var(--muted);max-width:46ch}
+.lab{grid-column:1/-1;margin-top:8px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{font:600 15px "Public Sans",system-ui,sans-serif;padding:10px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button:hover{border-color:var(--ink)}
+.tabs button[aria-selected=true]{color:#fff;border-color:transparent;background:var(--blue)}
+.tabs button[data-k=red][aria-selected=true]{background:var(--teal)}
+.tabs button[data-k=datos][aria-selected=true]{background:var(--violet)}
+.tabs button[data-k=seg][aria-selected=true]{background:var(--coral)}
+.stage{display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:34px;align-items:center;background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:26px}
+.art{width:100%;height:auto;display:block}
+.art[hidden]{display:none}
+.stage h3{font-size:26px;margin-bottom:8px}
+.stage p{margin:0 0 18px;color:var(--muted);max-width:46ch;font-size:17px}
+@keyframes blink{50%{opacity:0}}
+@keyframes wave{0%,100%{opacity:.15}50%{opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cur{animation:blink 1s steps(1) infinite}
+.w1,.w2,.w3{animation:wave 1.8s ease-in-out infinite}
+.w2{animation-delay:.3s}
+.w3{animation-delay:.6s}
+.spin{transform-origin:120px 80px;animation:spin 5s linear infinite}
+header{position:relative}
+header::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--blue),var(--teal),var(--violet),var(--coral),var(--amber))}
+.hero .wrap{position:relative;z-index:1}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(60px);opacity:.35;pointer-events:none}
+.hero::before{width:380px;height:380px;background:var(--teal);top:-120px;right:-80px;animation:float 9s ease-in-out infinite}
+.hero::after{width:320px;height:320px;background:var(--violet);bottom:-140px;left:-60px;animation:float 11s ease-in-out infinite reverse}
+@keyframes float{50%{transform:translate(30px,24px)}}
+@keyframes flow{50%{background-position:100% 50%}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,176,0,.65)}100%{box-shadow:0 0 0 12px rgba(255,176,0,0)}}
+.steps .now .dot{animation:pulse 1.6s infinite}
+.btn{transition:transform .2s,box-shadow .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(30,91,216,.3)}
+section h2::after{content:"";display:block;width:64px;height:5px;border-radius:3px;margin-top:12px;background:linear-gradient(90deg,var(--blue),var(--teal),var(--violet))}
+.stage{transition:border-color .3s}
+.stage[data-k]{border-color:var(--blue)}
+.stage[data-k=red]{--blue:var(--teal)}
+.stage[data-k=datos]{--blue:var(--violet)}
+.stage[data-k=seg]{--blue:var(--coral)}
+.svc li{position:relative;transition:padding .25s,background .25s,opacity .6s,transform .6s}
+.svc li::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--c,var(--blue));transform:scaleY(0);transform-origin:top;transition:transform .3s}
+.svc li:hover{padding-left:20px;background:var(--surface)}
+.svc li:hover::before{transform:scaleY(1)}
+.svc li:nth-child(1){--c:var(--blue)}
+.svc li:nth-child(2){--c:var(--teal)}
+.svc li:nth-child(3){--c:var(--violet)}
+.svc li:nth-child(4){--c:var(--coral)}
+.svc li:nth-child(5){--c:var(--amber)}
+.svc li:nth-child(6){--c:var(--blue)}
+.mv .cols div:nth-child(1){border-left-color:var(--teal)}
+.mv .cols div:nth-child(2){border-left-color:var(--coral)}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.cur,.w1,.w2,.w3,.spin,.hero,.hero::before,.hero::after,.steps .now .dot{animation:none}.rv{opacity:1;transform:none;transition:none}}
 .info p{margin:0 0 14px}
 .info b{display:block;font-weight:600}
 form{display:grid;gap:16px}
@@ -61,6 +115,8 @@ textarea{min-height:110px;resize:vertical}
 footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
 @media (max-width:760px){
 .hero .wrap,.contact .wrap,.mv .cols{grid-template-columns:1fr;gap:34px}
+.stage{grid-template-columns:1fr;gap:20px;padding:20px}
+.art{max-width:240px;margin:0 auto}
 .hero{padding:40px 0 48px}
 .svc li{grid-template-columns:1fr;gap:6px}
 section{padding:48px 0}
@@ -93,6 +149,27 @@ section{padding:48px 0}
 <li><span class="dot">3</span><div><strong>Listo para usar</strong><span>Pruebas finales y entrega</span></div></li>
 </ol>
 </aside>
+<div class="lab">
+<div class="tabs" role="group" aria-label="Qué arreglamos">
+<button type="button" data-k="pc">Computadoras</button>
+<button type="button" data-k="red">Redes y Wi-Fi</button>
+<button type="button" data-k="datos">Tus archivos</button>
+<button type="button" data-k="seg">Seguridad</button>
+</div>
+<div class="stage">
+<div>
+<svg class="art" data-k="pc" viewBox="0 0 240 160" role="img" aria-label="Laptop"><rect x="50" y="22" width="140" height="92" rx="8" fill="var(--bg)" stroke="var(--ink)" stroke-width="3"/><rect x="62" y="34" width="116" height="68" rx="3" fill="var(--surface)"/><path d="M72 48h50M72 60h72M72 72h38" stroke="var(--blue)" stroke-width="4" stroke-linecap="round"/><rect class="cur" x="118" y="67" width="6" height="10" fill="var(--amber)"/><path d="M30 126h180l-12 14H42z" fill="var(--ink)"/></svg>
+<svg class="art" data-k="red" viewBox="0 0 240 160" role="img" aria-label="Router Wi-Fi" hidden><rect x="45" y="96" width="150" height="36" rx="8" fill="var(--bg)" stroke="var(--ink)" stroke-width="3"/><circle cx="70" cy="114" r="4" fill="var(--blue)"/><circle cx="86" cy="114" r="4" fill="var(--amber)"/><circle cx="102" cy="114" r="4" fill="var(--blue)"/><path d="M65 96V70M175 96V70" stroke="var(--ink)" stroke-width="5" stroke-linecap="round"/><g fill="none" stroke="var(--blue)" stroke-width="5" stroke-linecap="round"><path class="w1" d="M104 78a22 22 0 0 1 32 0"/><path class="w2" d="M94 64a38 38 0 0 1 52 0"/><path class="w3" d="M84 50a54 54 0 0 1 72 0"/></g></svg>
+<svg class="art" data-k="datos" viewBox="0 0 240 160" role="img" aria-label="Disco duro" hidden><rect x="54" y="24" width="132" height="112" rx="12" fill="var(--bg)" stroke="var(--ink)" stroke-width="3"/><circle cx="120" cy="80" r="34" fill="var(--surface)" stroke="var(--ink)" stroke-width="3"/><g class="spin"><path d="M120 80V52" stroke="var(--blue)" stroke-width="5" stroke-linecap="round"/></g><circle cx="120" cy="80" r="6" fill="var(--ink)"/><circle cx="168" cy="40" r="5" fill="var(--amber)"/></svg>
+<svg class="art" data-k="seg" viewBox="0 0 240 160" role="img" aria-label="Escudo de seguridad" hidden><path d="M120 18l52 18v36c0 36-24 56-52 66-28-10-52-30-52-66V36z" fill="var(--bg)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/><path d="M95 76l17 17 32-36" fill="none" stroke="var(--blue)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+<div>
+<h3 id="lt"></h3>
+<p id="lp"></p>
+<a class="btn" href="#contacto">Pedir soporte</a>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -153,6 +230,25 @@ section{padding:48px 0}
 <footer><div class="wrap">© Computec Val. Soporte técnico tecnológico.</div></footer>
 
 <script>
+(function(){
+  var D={pc:["Computadoras","Equipos lentos, que no encienden o con pantalla dañada. Revisamos, reparamos y optimizamos."],red:["Redes y Wi-Fi","Router, señal en toda la casa u oficina e impresoras en red."],datos:["Tus archivos","Intentamos recuperar documentos y fotos de discos, memorias y equipos que dejaron de responder."],seg:["Seguridad","Eliminamos virus y configuramos antivirus y protecciones para que uses tu equipo con tranquilidad."]};
+  var tabs=document.querySelectorAll(".tabs button"),arts=document.querySelectorAll(".art"),lt=document.getElementById("lt"),lp=document.getElementById("lp");
+  function show(k){
+    tabs.forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.k===k))});
+    arts.forEach(function(a){a.hidden=a.dataset.k!==k});
+    lt.textContent=D[k][0];lp.textContent=D[k][1];
+    document.querySelector(".stage").setAttribute("data-k",k);
+  }
+  tabs.forEach(function(b){b.addEventListener("click",function(){show(b.dataset.k)})});
+  show("pc");
+  var els=document.querySelectorAll(".svc li,.mv .cols>div,.info,#f");
+  if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){var t=e.target;t.classList.add("in");io.unobserve(t);setTimeout(function(){t.style.transitionDelay=""},900)}
+    })},{threshold:.15});
+    els.forEach(function(el,i){el.classList.add("rv");el.style.transitionDelay=(i%3)*90+"ms";io.observe(el)});
+  }
+})();
 // Pon aquí tu número con código de país, solo dígitos (ej. 521234567890)
 var NUMERO="";
 document.getElementById("f").addEventListener("submit",function(e){
