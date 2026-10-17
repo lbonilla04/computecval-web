@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Computec Val | Soporte técnico tecnológico</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E9EFF2;--surface:#F7FAFB;--ink:#12263A;--muted:#4A5D6E;--line:#B9C6CF;--blue:#1E5BD8;--blue-ink:#fff;--amber:#FFB000;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1B28;--surface:#16273A;--ink:#E8EEF3;--muted:#9FB0BF;--line:#2B4157;--blue:#5B8DF0;--blue-ink:#0F1B28;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1B28;--surface:#16273A;--ink:#E8EEF3;--muted:#9FB0BF;--line:#2B4157;--blue:#5B8DF0;--blue-ink:#0F1B28;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Public Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;line-height:1.08;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header{padding:20px 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font:800 22px "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.01em}
+.logo span{color:var(--blue)}
+nav{display:flex;gap:22px;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.hero{padding:64px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,6.4vw,74px);font-weight:800;letter-spacing:-.025em}
+.hero p{max-width:46ch;color:var(--muted);font-size:19px;margin:22px 0 30px}
+.btn{display:inline-block;background:var(--blue);color:var(--blue-ink);padding:14px 26px;border-radius:6px;font-weight:600;text-decoration:none;border:0;font-size:17px;font-family:inherit;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.ticket{background:var(--surface);border:1.5px solid var(--ink);border-radius:10px;padding:26px;position:relative}
+.ticket h3{font-size:20px;margin-bottom:4px}
+.ticket small{color:var(--muted)}
+.steps{list-style:none;margin:22px 0 0;padding:0}
+.steps li{display:flex;gap:14px;padding:12px 0;border-top:1px dashed var(--line);align-items:center}
+.dot{width:26px;height:26px;border-radius:50%;border:2px solid var(--line);flex:none;display:grid;place-items:center;font-size:13px;font-weight:600}
+.steps .done .dot{background:var(--blue);border-color:var(--blue);color:var(--blue-ink)}
+.steps .now .dot{border-color:var(--amber);background:var(--amber);color:#12263A}
+.steps strong{display:block;line-height:1.2}
+.steps span{color:var(--muted);font-size:15px}
+section{padding:68px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(30px,4.4vw,44px);font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 34px}
+.svc{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
+.svc li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.svc h3{font-size:22px;font-weight:700}
+.svc p{margin:0;color:var(--muted)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:48px}
+.mv .cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:30px}
+.mv .cols div{border-left:4px solid var(--blue);padding-left:22px}
+.mv h3{font-size:24px;font-weight:700;margin-bottom:8px}
+.mv p{margin:0;color:var(--muted);max-width:46ch}
+.info p{margin:0 0 14px}
+.info b{display:block;font-weight:600}
+form{display:grid;gap:16px}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:6px;padding:12px 14px;width:100%}
+textarea{min-height:110px;resize:vertical}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+@media (max-width:760px){
+.hero .wrap,.contact .wrap,.mv .cols{grid-template-columns:1fr;gap:34px}
+.hero{padding:40px 0 48px}
+.svc li{grid-template-columns:1fr;gap:6px}
+section{padding:48px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="logo" href="#inicio">Computec <span>Val</span></a>
+<nav aria-label="Principal"><a href="#servicios">Servicios</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></nav>
+</div>
+</header>
+
+<main id="inicio">
+<div class="hero">
+<div class="wrap">
+<div>
+<h1>Tu equipo funcionando, sin vueltas.</h1>
+<p>Soporte técnico para computadoras, redes y dispositivos. Revisamos el problema, te explicamos qué pasa y lo resolvemos.</p>
+<a class="btn" href="#contacto">Pedir soporte</a>
+</div>
+<aside class="ticket" aria-label="Así trabajamos">
+<h3>Orden de servicio</h3>
+<small>Así sigues tu equipo con nosotros</small>
+<ol class="steps">
+<li class="done"><span class="dot">✓</span><div><strong>Recibido</strong><span>Anotamos la falla y el estado del equipo</span></div></li>
+<li class="now"><span class="dot">2</span><div><strong>Diagnóstico</strong><span>Te decimos la causa y el costo antes de reparar</span></div></li>
+<li><span class="dot">3</span><div><strong>Listo para usar</strong><span>Pruebas finales y entrega</span></div></li>
+</ol>
+</aside>
+</div>
+</div>
+
+<section id="servicios">
+<div class="wrap">
+<h2>Servicios</h2>
+<p class="lead">Para hogares, oficinas y negocios pequeños.</p>
+<ul class="svc">
+<li><h3>Reparación de computadoras</h3><p>Equipos lentos, que no encienden, pantallas dañadas y fallas de hardware en laptops y de escritorio.</p></li>
+<li><h3>Mantenimiento y limpieza</h3><p>Limpieza interna, cambio de pasta térmica y ajustes para que tu equipo dure más y trabaje mejor.</p></li>
+<li><h3>Software y antivirus</h3><p>Instalación de Windows y programas, eliminación de virus y configuración de seguridad.</p></li>
+<li><h3>Redes y Wi-Fi</h3><p>Instalación y configuración de routers, cobertura Wi-Fi e impresoras en red.</p></li>
+<li><h3>Recuperación de datos</h3><p>Rescate de archivos de discos, memorias y equipos que dejaron de responder.</p></li>
+<li><h3>Soporte para empresas</h3><p>Atención a tus equipos y usuarios, en sitio o a distancia, con visitas programadas.</p></li>
+</ul>
+</div>
+</section>
+
+<section id="nosotros" class="mv">
+<div class="wrap">
+<h2>Nosotros</h2>
+<div class="cols">
+<div><h3>Misión</h3><p>Resolver los problemas tecnológicos de nuestros clientes de forma rápida, honesta y clara, para que sus equipos y redes sigan funcionando.</p></div>
+<div><h3>Visión</h3><p>Ser el soporte técnico de confianza de hogares y empresas, reconocido por atender a cualquier hora y explicar cada solución en palabras simples.</p></div>
+</div>
+</div>
+</section>
+
+<section id="contacto" class="contact">
+<div class="wrap">
+<div class="info">
+<h2>Cuéntanos qué pasa</h2>
+<p class="lead">Describe la falla y te respondemos para acordar la revisión.</p>
+<p><b>Teléfono / WhatsApp</b><span id="tel">6251-0390</span></p>
+<p><b>Correo</b><a href="mailto:info@computecval.com">info@computecval.com</a></p>
+<p><b>Horario</b>Atención 24/7</p>
+</div>
+<form id="f">
+<label>Nombre<input id="n" required autocomplete="name"></label>
+<label>¿Qué necesitas?
+<select id="t">
+<option>Reparación de computadora</option>
+<option>Mantenimiento y limpieza</option>
+<option>Software o antivirus</option>
+<option>Redes y Wi-Fi</option>
+<option>Recuperación de datos</option>
+<option>Soporte para empresa</option>
+<option>Otro</option>
+</select></label>
+<label>Describe el problema<textarea id="d" required></textarea></label>
+<button class="btn" type="submit">Enviar por WhatsApp</button>
+<small id="msg" role="status" style="color:var(--muted)"></small>
+</form>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">© Computec Val. Soporte técnico tecnológico.</div></footer>
+
+<script>
+// Pon aquí tu número con código de país, solo dígitos (ej. 521234567890)
+var NUMERO="";
+document.getElementById("f").addEventListener("submit",function(e){
+  e.preventDefault();
+  var m=document.getElementById("msg");
+  var texto="Hola, soy "+document.getElementById("n").value+". Necesito: "+document.getElementById("t").value+". "+document.getElementById("d").value;
+  if(!NUMERO){m.textContent="Falta configurar el número de WhatsApp del negocio.";return}
+  window.open("https://wa.me/"+NUMERO+"?text="+encodeURIComponent(texto),"_blank","noopener");
+});
+</script>
+</body>
+</html>
