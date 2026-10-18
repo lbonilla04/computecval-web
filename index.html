@@ -277,7 +277,7 @@ section{padding:48px 0}
 })();
 // Pon aquí tu número con código de país, solo dígitos (ej. 521234567890)
 var NUMERO="50762510390";
-var ENDPOINT=""; // URL del flujo que envía el correo (Power Automate / Logic App)
+var ENDPOINT="https://prod-00.centralus.logic.azure.com/workflows/8960322860304782a5d78489af9bc088/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=4cysHKJlMG1M4sPZStPVeqzl-v4w2p22gmtzwcTDaJk"; // URL del flujo que envía el correo (Power Automate / Logic App)
 function nuevoTicket(){
   var d=new Date(),p=function(n){return String(n).padStart(2,"0")},a="ABCDEFGHJKLMNPQRSTUVWXYZ23456789",r="";
   for(var i=0;i<4;i++)r+=a[Math.floor(Math.random()*a.length)];
